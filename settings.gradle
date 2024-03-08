@@ -1,4 +1,6 @@
 rootProject.name = 'gatewayserver'
 include 'discovery-server'
 include 'discovery-client'
+include 'gateway-service'
+include 'gateway-service'
 

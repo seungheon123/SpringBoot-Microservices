@@ -1,11 +1,17 @@
 spring:
   application:
-    name: client-service
+    name: DISCOVERY-SERVICE
+  cloud:
+    discovery:
+      enabled: true
 eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       default-zone: http://localhost:8761/eureka/
+
 server:
   port: 8070
