@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8080
 eureka:
   client:
     register-with-eureka: true
@@ -16,7 +16,7 @@ spring:
     gateway:
       routes:
         - id: DISCOVERY-SERVICE
-          uri: lb://DISCOVERY-SERVICE
+          uri: http://localhost:8070
           predicates:
             - Path=/discovery-service/**
 

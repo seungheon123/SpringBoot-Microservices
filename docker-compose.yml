@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  discovery-server:
+    build:
+      context: ./discovery-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    restart: always
+  discovery-client:
+    build:
+      context: ./discovery-client
+      dockerfile: Dockerfile
+    ports:
+      - "8070:8070"
+    restart: always
+  gateway-server:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
